@@ -1,0 +1,96 @@
+<div class="text-center input">
+  <h1>Input</h1>
+  <div>
+    <form [formGroup]="frmInput" (submit)="onSubmit(frmInput.value)">
+      <div class="mb-3">
+        <label for="nameFor" class="form-label">Name:</label>
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          id="nameFor"
+          required
+          minlength="4"
+          placeholder="Your Name"
+          formControlName="name"
+        />
+      </div>
+      <div class="text-danger" *ngIf="Name.touched && Name.invalid">
+        <span *ngIf="Name.errors?.['required']">Name required.</span>
+        <span *ngIf="Name.errors?.['minlength']"
+          >Name too short min 4 char</span
+        >
+      </div>
+
+      <div class="mb-3">
+        <label for="dobFor" class="form-label">Date of birth:</label>
+        <input
+          name="date"
+          type="text"
+          class="form-control"
+          id="dobFor"
+          required
+          formControlName="dob"
+        />
+      </div>
+      <div class="text-danger" *ngIf="Dob.touched && Dob.invalid">
+        <span *ngIf="Dob.errors?.['required']">DOB required.</span>
+       
+      
+      </div>
+     
+
+      <div class="mb-3">
+        <label for="phoneFor" class="form-label">Phone:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="phoneFor"
+          name="phone"
+          required
+         
+          placeholder="Phone No"
+          formControlName="phone"
+        />
+      </div>
+      <div class="text-danger" *ngIf="Phone.touched && Phone.invalid">
+        <span *ngIf="Phone.errors?.['required']">Phone required.</span>
+        <span *ngIf="Phone.errors?.['minlength']"
+          >Phone no too short min 10 char</span
+        >
+      </div>
+
+      <div class="mb-3 form-check">
+        <label class="form-check-label" for="exampleCheck1">Male</label>
+        <input
+          type="radio"
+          class="form-check-input"
+          id="exampleCheck1"
+          name="gender"
+          value="male"
+          formControlName="gender"
+          required
+        />
+      </div>
+      <div class="mb-3 form-check">
+        <label class="form-check-label" for="exampleCheck2">Female</label>
+        <input
+          type="radio"
+          class="form-check-input"
+          id="exampleCheck2"
+          name="gender"
+          value="female"
+          formControlName="gender"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="Name.invalid || Phone.invalid "
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

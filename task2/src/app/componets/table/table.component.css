@@ -1,0 +1,13 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 5px;
+  }
+  td, th {
+    border: 2px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  .required{
+    color: red;
+  }

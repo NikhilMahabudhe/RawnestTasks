@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col text-center table1">
+    <h1>Table 1</h1>
+    <app-table (downGrade)="getdownGradeitem($event)" (editArray)="getUpdatedArray($event)" (editItem)="editItem($event)" [showArray]="usersArray" [upGradeArray]="upgradedArray" ></app-table>
+  </div>
+  <div class="col text-center table2">
+    <h1>Table 2</h1>
+    <app-table  [showArray]="upgradedArray" ></app-table>
+  </div>
+</div>
+<div class="text-center input">
+  <app-input (sendDetails)="getDetails($event)" ></app-input>
+</div>
+
+
+

@@ -1,0 +1,7 @@
+.table1,.table2{
+    height: 500px;
+    border: 2px solid black;
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+
